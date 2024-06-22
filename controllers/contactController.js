@@ -8,6 +8,13 @@ const getContacts=(req,res)=>{
 // @route POST /api/contacts
 //@acess public
 const createContact=(req,res)=>{
+    console.log("The request body is ",req.body);
+    const {name,email,phone}=req.body;
+    if(!name||!body||!phone)
+        {
+            res.status(400);
+            throw new Error("All fields are not filled up!!")
+        }
     res.status(201).json({message:"Create contacts"})
 }
 //@desc get individual contact
